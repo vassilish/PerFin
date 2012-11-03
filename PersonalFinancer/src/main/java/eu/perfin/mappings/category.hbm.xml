@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="eu.perfin.data.Category" table="PF_CATEGORY" lazy="true">
+      <id name="id" type="long" column="CATEGORY_ID">
+          <generator class="assigned"/>
+      </id>
+      <property name="description" type="String" column="CATEGORY_DESCR"/>
+      <property name="creationDate" type="Date" column="CREATIONDATE"/>
+      <property name="type" type="string" column="CATEGORY_TYPE"/>
+      <many-to-one name="user" column="USER_ID" class="User" not-null="true"/>
+  </class>
+</hibernate-mapping>

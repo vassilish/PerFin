@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="eu.perfin.data.User" table="PF_USER" lazy="true">
+      <id name="id" type="long" column="ID">
+          <generator class="assigned"/>
+      </id>
+      <property name="username" type="string" column="USERNAME"/>
+      <property name="password" type="string" column="PASSWORD"/>
+      <property name="firstName" type="string" column="FIRSTNAME"/>
+      <property name="lastName" type="string" column="LASTNAME"/>
+      <property name="creationDate" type="date" column="REGISTER_DATE"/>
+      <property name="birthDate" type="date" column="BIRTHDATE"/>
+      <list name="capitals" inverse="true" lazy="true" >
+          <key>
+              <column name="CAPITAL_ID" not-null="true"/>
+          </key>
+          <one-to-many class="eu.perfin.data.Capital"/>
+      </list>
+      <list name="categories" inverse="true" lazy="true" >
+          <key>
+              <column name="CATEGORY_ID" not-null="true"/>
+          </key>
+          <one-to-many class="eu.perfin.data.Category"/>
+      </list>
+      <list name="transactions" inverse="true" lazy="true" >
+          <key>
+              <column name="ID" not-null="true"/>
+          </key>
+          <one-to-many class="eu.perfin.data.PFTransaction"/>
+      </list>
+  </class>
+</hibernate-mapping>

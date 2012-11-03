@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="eu.perfin.data.Capital" table="PF_CAPITAL" lazy="true">
+      <id name="id" type="long" column="CAPITAL_ID">
+          <generator class="assigned"/>
+      </id>
+      <property name="description" type="string" column="CAPITAL_DESCR"/>
+      <property name="creationDate" type="date" column="CREATION_DATE"/>
+      <property name="initialAmount" type="double" column="INITIAL_AMOUNT"/>
+      <property name="currentAmount" type="double" column="CURRENT_AMOUNT"/>
+      <many-to-one name="user" column="USERID" class="User" not-null="true"/>
+  </class>
+</hibernate-mapping>
