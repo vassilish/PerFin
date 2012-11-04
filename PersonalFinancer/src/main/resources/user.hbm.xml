@@ -11,23 +11,6 @@
       <property name="lastName" type="string" column="LASTNAME"/>
       <property name="creationDate" type="date" column="REGISTER_DATE"/>
       <property name="birthDate" type="date" column="BIRTHDATE"/>
-      <list name="capitals" inverse="true" lazy="true" >
-          <key>
-              <column name="CAPITAL_ID" not-null="true"/>
-          </key>
-          <one-to-many class="eu.perfin.data.Capital"/>
-      </list>
-      <list name="categories" inverse="true" lazy="true" >
-          <key>
-              <column name="CATEGORY_ID" not-null="true"/>
-          </key>
-          <one-to-many class="eu.perfin.data.Category"/>
-      </list>
-      <list name="transactions" inverse="true" lazy="true" >
-          <key>
-              <column name="ID" not-null="true"/>
-          </key>
-          <one-to-many class="eu.perfin.data.PFTransaction"/>
-      </list>
+     
   </class>
 </hibernate-mapping>

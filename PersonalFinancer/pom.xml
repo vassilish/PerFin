@@ -5,7 +5,7 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>PersonalFinancer</name>
   <url>http://maven.apache.org</url>
-  
+  <packaging>war</packaging>
   <build>
     <directory>target</directory>
     <outputDirectory>target/classes</outputDirectory>
@@ -42,6 +42,11 @@
   		<groupId>org.slf4j</groupId>
   		<artifactId>slf4j-log4j12</artifactId>
   		<version>1.5.2</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>junit</groupId>
+  		<artifactId>junit</artifactId>
+  		<version>4.1</version>
   	</dependency>
   </dependencies>
 </project>

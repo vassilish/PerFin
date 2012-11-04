@@ -5,7 +5,7 @@
       <id name="id" type="long" column="ID">
           <generator class="assigned"/>
       </id>
-      <property name="description" type="String" column="REASON"not-null="true"/>
+      <property name="description" type="String" column="REASON" not-null="true"/>
       <property name="creationDate" type="Date" column="CREATION_DATE" not-null="true"/>
       <property name="type" type="String" column="TYPE" not-null="true"/>
       <many-to-one name="user" class="User" column="USER_ID" not-null="true"/> 
